@@ -14,9 +14,22 @@ server.use(jsonServer.bodyParser);
 server.use((req, res, next) => {
   // Only validate for POST/PUT/PATCH requests
   if ((req.method === 'POST' || req.method === 'PUT' || req.method === 'PATCH') && req.body && req.body.name) {
-    if (req.body.name.length > 40) {
-      return res.status(400).send("Name cannot exceed 40 characters.");
+    if (req.body.name.length > 15) {
+      return res.status(400).send("Name cannot exceed 15 characters.");
     }
+    else if(req.body.username > 10){
+        return res.status(400).send("Name cannot exceed 15 characters.");
+    }
+    else if(req.body.phone > 11){
+        return res.status(400).send("Phone cannot exceed 11 character");
+    }
+    else if(req.body.website > 25){
+        return res.status(400).send("Website cannot exceed 25 character");
+    }
+    else if(req.body.company > 20){
+        return res.status(400).send("company cannot exceed 20 character");
+    }
+
   }
   next();
 });
