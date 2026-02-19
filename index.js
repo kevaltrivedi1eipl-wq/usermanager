@@ -17,16 +17,16 @@ server.use((req, res, next) => {
     if (req.body.name.length > 15) {
       return res.status(400).send("Name cannot exceed 15 characters.");
     }
-    else if(req.body.username > 10){
+    else if(req.body.username.length > 10){
         return res.status(400).send("Name cannot exceed 15 characters.");
     }
-    else if(req.body.phone > 11){
+    else if(req.body.phone.length > 11){
         return res.status(400).send("Phone cannot exceed 11 character");
     }
-    else if(req.body.website > 25){
+    else if(req.body.website.length > 25){
         return res.status(400).send("Website cannot exceed 25 character");
     }
-    else if(req.body.company > 20){
+    else if(req.body.company.length > 20){
         return res.status(400).send("company cannot exceed 20 character");
     }
 
