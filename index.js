@@ -10,9 +10,9 @@ server.use(router);
 server.listen(port);
 
 server.use((req, res, next) => {
-  if (req.body && req.body.description) {
-    if (req.body.description.length > 500) {
-      return res.status(400).send("Description cannot exceed 500 characters.");
+  if (req.body && req.body.name) {
+    if (req.body.name.length > 40) {
+      return res.status(400).send("Name cannot exceed 40 characters.");
     }
   }
   next();
