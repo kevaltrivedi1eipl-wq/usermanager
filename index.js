@@ -27,8 +27,9 @@ server.use((req, res, next) => {
     if (company && company.length > 20) {
       return res.status(400).send("Company name cannot exceed 20 characters.");
     }
-    if(website && website.length > 28) {
-        return res.status(400).send("Website cannot exceed 28 characters.");
+    if(website && website.length > 30){
+        return res.status(400).send("Website name cannot exceed 30 character");
+    }
   }
   next();
 });
