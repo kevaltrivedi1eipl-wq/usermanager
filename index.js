@@ -18,7 +18,7 @@ server.use((req, res, next) => {
     if (username && username.length > 15) {
       return res.status(400).send("Username cannot exceed 15 characters.");
     }
-    if (email && email.length > 25) {
+    if (email && email.length > 35) {
       return res.status(400).send("Email cannot exceed 25 characters.");
     }
     if (phone && phone.length > 15) {
