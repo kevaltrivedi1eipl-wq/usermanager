@@ -10,7 +10,7 @@ server.use(jsonServer.bodyParser); // Ensure body is parsed
 // Custom validation middleware
 server.use((req, res, next) => {
   if (req.method === 'POST' || req.method === 'PUT' || req.method === 'PATCH') {
-    const { name, username, email, phone, company } = req.body || {};
+    const { name, username, email, phone, company, website } = req.body || {};
 
     if (name && name.length > 20) {
       return res.status(400).send("Name cannot exceed 20 characters.");
@@ -27,6 +27,8 @@ server.use((req, res, next) => {
     if (company && company.length > 20) {
       return res.status(400).send("Company name cannot exceed 20 characters.");
     }
+    if(website && website.length > 28) {
+        return res.status(400).send("Website cannot exceed 28 characters.");
   }
   next();
 });
